@@ -15,7 +15,7 @@ class UploadController extends Controller
         if ($profile != 'default' && !$this->container->hasParameter('vx_js_upload.profile.'.$profile))
             return false;
 
-        return $profile == 'default' ? UploadHandler::getDefaultOptions() 
+        return $profile == 'default' ? UploadHandler::getDefaultOptions()
                             : $this->container->getParameter('vx_js_upload.profile.'.$profile);
     }
 
@@ -61,8 +61,6 @@ class UploadController extends Controller
         $resp = new Response(json_encode($handler->delete(false)));
         $resp->headers->set('content-type', 'application-json');
 
-        return $resp;        
+        return $resp;
     }
 }
-
-?>
